@@ -1,3 +1,35 @@
-*::before *::after{
+*::before, *::after, *{
     box-sizing: border-box;
 }
+
+:root {
+  --primary-h: 261;
+  --primary-s: 88%;
+  --primary-l: 17%;
+}
+
+body {
+    background-color: hsl(var(--primary-h), var(--primary-s), var(--primary-l));
+    color: hsl(var(--primary-h), var(--primary-s), 90%);
+    text-align: center;
+}
+
+.strength-meter {
+  --primary-l: 57%;
+  position: relative;
+  height: 2rem;
+  width: 90%;
+  border: 3px solid hsl(var(--primary-h), var(--primary-s), var(--primary-l));
+  border-radius: 1rem;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+
+/* .button {
+  background-color: hsl(var(--primary-h), var(--primary-s), var(--primary-l));
+}
+
+.button:hover {
+  --primary-l: 54%;
+} */
