@@ -25,6 +25,18 @@ body {
   overflow: hidden;
 }
 
+.strength-meter::before {
+  --strength: 20;
+  content: '';
+  position: absolute;
+  left: 0;
+  height: 100%;
+  width: calc(1% * var(--strength, 0));
+  background-color: hsl(var(--primary-h), var(--primary-s), 67%);
+  transition: width 200ms;
+}
+
+
 
 /* .button {
   background-color: hsl(var(--primary-h), var(--primary-s), var(--primary-l));
