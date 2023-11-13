@@ -26,7 +26,7 @@ body {
 }
 
 .strength-meter::before {
-  --strength: 20;
+  /* --strength: 20; */
   content: '';
   position: absolute;
   left: 0;
@@ -36,6 +36,21 @@ body {
   transition: width 200ms;
 }
 
+.password-input {
+  margin-top: 1rem;
+  width: 90%;
+  padding: 0.25rem .75rem;
+  background-color: hsl(var(--primary-h), var(--primary-s), 25%);
+  color: white;
+  border: 1px solid hsl(var(--primary-h), var(--primary-s), 57%);
+  outline: none;
+  text-align: center;
+  border-radius: .3rem;
+}
+
+.password-input:focus {
+  border-color: hsl(var(--primary-h), var(--primary-s), 70%);
+}
 
 
 /* .button {
