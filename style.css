@@ -52,6 +52,11 @@ body {
   border-color: hsl(var(--primary-h), var(--primary-s), 70%);
 }
 
+.reasons > * {
+  margin-top: .5rem;
+  color: hsl(var(--primary-h), var(--primary-s), 80%);
+}
+
 
 /* .button {
   background-color: hsl(var(--primary-h), var(--primary-s), var(--primary-l));
