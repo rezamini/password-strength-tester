@@ -27,6 +27,7 @@ function updateStrengthMeter() {
 function calculatePasswordStrength(password) {
   const weaknesses = [];
   weaknesses.push(lengthWeakness(password));
+  weaknesses.push(lowercaseWeakness(password));
 
   return weaknesses;
 }
@@ -49,3 +50,20 @@ function lengthWeakness(password) {
   }
 }
 
+function lowercaseWeakness(password){
+    const matches = password.match(/[a-z]/g);
+    if(matches == null || matches.length === 0){
+        return {
+            message: `Your password has no lowercase characters`,
+            deduction: 20
+        }
+    }
+
+    if(matches.length <= 2){
+        return {
+            message: `Your password could use more lowercase characters`,
+            deduction: 5
+        }
+    }
+
+}
