@@ -28,6 +28,7 @@ function calculatePasswordStrength(password) {
   const weaknesses = [];
   weaknesses.push(lengthWeakness(password));
   weaknesses.push(lowercaseWeakness(password));
+  weaknesses.push(uppercaseWeakness(password));
 
   return weaknesses;
 }
@@ -51,19 +52,36 @@ function lengthWeakness(password) {
 }
 
 function lowercaseWeakness(password){
-    const matches = password.match(/[a-z]/g);
+  const matches = password.match(/[a-z]/g);
+  if(matches == null || matches.length === 0){
+      return {
+          message: `Your password has no lowercase characters`,
+          deduction: 20
+      }
+  }
+
+  if(matches.length <= 2){
+      return {
+          message: `Your password could use more lowercase characters`,
+          deduction: 5
+      }
+  }
+
+}
+
+function uppercaseWeakness(password){
+    const matches = password.match(/[A-Z]/g);
     if(matches == null || matches.length === 0){
         return {
-            message: `Your password has no lowercase characters`,
+            message: `Your password has no uppercase characters`,
             deduction: 20
         }
     }
 
     if(matches.length <= 2){
         return {
-            message: `Your password could use more lowercase characters`,
+            message: `Your password could use more uppercase characters`,
             deduction: 5
         }
     }
-
 }
