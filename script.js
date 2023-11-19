@@ -52,20 +52,20 @@ function lengthWeakness(password) {
 }
 
 function lowercaseWeakness(password){
-  const matches = password.match(/[a-z]/g);
-  if(matches == null || matches.length === 0){
-      return {
-          message: `Your password has no lowercase characters`,
-          deduction: 20
-      }
-  }
+    const matches = password.match(/[a-z]/g);
+    if(matches == null || matches.length === 0){
+        return {
+            message: `Your password has no lowercase characters`,
+            deduction: 20
+        }
+    }
 
-  if(matches.length <= 2){
-      return {
-          message: `Your password could use more lowercase characters`,
-          deduction: 5
-      }
-  }
+    if(matches.length <= 2){
+        return {
+            message: `Your password could use more lowercase characters`,
+            deduction: 5
+        }
+    }
 
 }
 
@@ -85,3 +85,22 @@ function uppercaseWeakness(password){
         }
     }
 }
+
+
+function characterTypeWeakness(password, regex, type){
+    const matches = password.match(regex);
+    if(matches == null || matches.length === 0){
+        return {
+            message: `Your password has no ${type}`,
+            deduction: 20
+        }
+    }
+
+    if(matches.length <= 2){
+        return {
+            message: `Your password could use more ${type}`,
+            deduction: 5
+        }
+    }
+}
+
