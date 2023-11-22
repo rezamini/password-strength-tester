@@ -31,6 +31,7 @@ function calculatePasswordStrength(password) {
   weaknesses.push(uppercaseWeakness(password));
   weaknesses.push(numberWeakness(password));
   weaknesses.push(specialCharactersWeakness(password));
+  weaknesses.push(repeatCharactersWeakness(password));
 
   return weaknesses;
 }
@@ -86,6 +87,18 @@ function characterTypeWeakness(password, regex, type){
         return {
             message: `Your password could use more ${type}`,
             deduction: 5
+        }
+    }
+}
+
+function repeatCharactersWeakness(password){
+    // (.) means anything followed by the same thing \1 . so we have two characters in a row like aa or 11 or more.
+    // e.g, The length would be 1 for 'aa' and 2 for 'aaaa'. every two set is increased by 1 length
+    const matches = password.match(/(.)\1/g);
+    if(matches.length > 0){
+        return {
+            message: 'Your password has repeat characters',
+            deduction: 10,
         }
     }
 }
