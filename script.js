@@ -97,11 +97,11 @@ function repeatCharactersWeakness(password){
     // to have it match for atleast three character set the format is /(.)\1\1/g)
     const matches = password.match(/(.)\1\1/g);
     if(matches == null) return;
-
+    
     if(matches.length > 0){
         return {
             message: 'Your password has repeat characters',
-            deduction: 10,
+            deduction: matches.length * 10,
         }
     }
 }
