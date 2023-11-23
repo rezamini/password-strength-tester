@@ -94,7 +94,10 @@ function characterTypeWeakness(password, regex, type){
 function repeatCharactersWeakness(password){
     // (.) means anything followed by the same thing \1 . so we have two characters in a row like aa or 11 or more.
     // e.g, The length would be 1 for 'aa' and 2 for 'aaaa'. every two set is increased by 1 length
-    const matches = password.match(/(.)\1/g);
+    // to have it match for atleast three character set the format is /(.)\1\1/g)
+    const matches = password.match(/(.)\1\1/g);
+    if(matches == null) return;
+
     if(matches.length > 0){
         return {
             message: 'Your password has repeat characters',
