@@ -70,7 +70,7 @@ function numberWeakness(password){
 function specialCharactersWeakness(password){
     // ^ not symbol followed by the conditions
     // \s white space
-    return characterTypeWeakness(password, /[^0-9a-zA-Z\s]/g, 'numbers');
+    return characterTypeWeakness(password, /[^0-9a-zA-Z\s]/g, 'special characters');
 }
 
 
