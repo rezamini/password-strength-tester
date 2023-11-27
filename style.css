@@ -57,6 +57,28 @@ body {
   margin: 1rem auto; /* Adjust margins */
 }
 
+.input-container > img {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 10px; /* Adjust this value for positioning */
+  height: 20px; /* Set the height of the image */
+  width: 20px; /* Set the width of the image */
+  cursor: pointer;
+}
+
+/* .password-icon {
+  margin-left: -30px;
+  margin-top: 35px;
+  cursor: pointer;
+} */
+
+/* #password-input {
+  background-image: url(./icons/show.png);
+  background-repeat: no-repeat;
+  background-position: 2px 3px;
+} */
+
 .reasons {
   margin-top: 1.5rem;
 }
