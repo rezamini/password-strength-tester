@@ -10,14 +10,17 @@
   <body>
     <h1>Password Strength Tester</h1>
     <div id="strength-meter" class="strength-meter"></div>
-    <input
-      id="password-input"
-      class="password-input"
-      value="password"
-      type="text"
-      aria-labelledby="Password"
-      autofocus
-    />
+    <div class="input-container">
+      <input
+        id="password-input"
+        class="password-input"
+        value="password"
+        type="text"
+        aria-labelledby="Password"
+        autofocus
+      />
+      <img id="toggle-password" class="password-icon" src="./icons/show.png" />
+    </div>
     <div id="reasons" class="reasons"></div>
   </body>
 </html>

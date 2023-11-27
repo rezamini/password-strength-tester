@@ -37,10 +37,8 @@ body {
 }
 
 .password-input {
-  margin-top: 1rem;
   height: 2rem;
-  width: 90%;
-  padding: 0.25rem .75rem;
+  width: 100%;
   background-color: hsl(var(--primary-h), var(--primary-s), 25%);
   color: white;
   border: 1px solid hsl(var(--primary-h), var(--primary-s), 57%);
@@ -51,6 +49,12 @@ body {
 
 .password-input:focus {
   border-color: hsl(var(--primary-h), var(--primary-s), 70%);
+}
+
+.input-container {
+  position: relative;
+  width: 90%; /* Adjust as needed */
+  margin: 1rem auto; /* Adjust margins */
 }
 
 .reasons {
