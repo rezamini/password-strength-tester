@@ -39,12 +39,14 @@ body {
 .password-input {
   height: 2rem;
   width: 100%;
+  padding-right: 30px; /* Ensure space for the image */
   background-color: hsl(var(--primary-h), var(--primary-s), 25%);
   color: white;
   border: 1px solid hsl(var(--primary-h), var(--primary-s), 57%);
   outline: none;
   text-align: center;
   border-radius: .3rem;
+  box-sizing: border-box; /* Include padding in width/height */
 }
 
 .password-input:focus {
