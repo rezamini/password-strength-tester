@@ -6,6 +6,14 @@ const passwordIconImg = document.getElementById("toggle-password");
 passwordIconImg.addEventListener('click', () => {
   const inputAttribute = passwordInput.getAttribute('type') === "text" ? "password" : "text";
   passwordInput.setAttribute("type", inputAttribute);
+  
+  //update the icon
+  if(inputAttribute == "text"){
+    passwordIconImg.setAttribute("src" , "./icons/show.png");
+  }else{
+    passwordIconImg.setAttribute("src" , "./icons/hide.png");
+  }
+  
 });
 
 passwordInput.addEventListener("input", updateStrengthMeter);
