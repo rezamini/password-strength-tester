@@ -1,6 +1,12 @@
 const strengthMeter = document.getElementById("strength-meter");
 const passwordInput = document.getElementById("password-input");
 const reasonsContainer = document.getElementById("reasons");
+const passwordIconImg = document.getElementById("toggle-password");
+
+passwordIconImg.addEventListener('click', () => {
+  const inputAttribute = passwordInput.getAttribute('type') === "text" ? "password" : "text";
+  passwordInput.setAttribute("type", inputAttribute);
+});
 
 passwordInput.addEventListener("input", updateStrengthMeter);
 updateStrengthMeter(); //calculate the password strength immediately based on the input current password
